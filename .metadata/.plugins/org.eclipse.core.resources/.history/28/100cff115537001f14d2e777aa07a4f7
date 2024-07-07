@@ -1,0 +1,9 @@
+package com.example.demo.entity;
+
+public class Doctor {
+	
+	private int id_doctor;
+	private String nombre;
+	private String apellidos;
+		
+}

@@ -1,0 +1,12 @@
+package com.example.demo.service;
+
+import com.example.demo.entity.Citas;
+
+public interface CitasService  {
+
+	void readlAll();
+	int create(Citas citas);
+	int update(Citas citas);
+	int delete (int id);
+	Citas findById(int id);
+}

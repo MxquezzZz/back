@@ -1,0 +1,6 @@
+package com.example.demo.entity;
+
+public class Especialidad {
+	private int id_especialidad;
+	private String especialidad;
+}

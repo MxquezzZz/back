@@ -1,0 +1,47 @@
+package com.example.demo.serviceImpl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.Citas;
+import com.example.demo.repository.CitasRepository;
+import com.example.demo.service.CitasService;
+
+@Service
+public class CitasServiceImpl implements CitasService{
+	
+	private CitasRepository repo;
+	
+	@Override
+	public List<Citas> readlAll() {
+		// TODO Auto-generated method stub
+		return repo.findAll();
+	}
+
+	@Override
+	public Citas create(Citas citas) {
+		// TODO Auto-generated method stub
+		return repo.save(citas);
+	}
+
+	@Override
+	public Citas update(Citas citas) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Optional<Citas> findById(int id) {
+		// TODO Auto-generated method stub
+		return repo.findById(id);
+	}
+
+}

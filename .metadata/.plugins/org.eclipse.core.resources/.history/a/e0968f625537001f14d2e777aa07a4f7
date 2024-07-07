@@ -1,0 +1,12 @@
+package com.example.demo.entity;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Doctor {
+	
+	private int id_doctor;
+	private String nombre;
+	private String apellidos;
+		
+}

@@ -1,0 +1,22 @@
+package com.example.demo.entity;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Especialidad {
+	private int id_especialidad;
+	private String especialidad;
+		
+	public Especialidad() {
+		super();
+	}
+
+	public Especialidad(int id_especialidad, String especialidad) {
+		super();
+		this.id_especialidad = id_especialidad;
+		this.especialidad = especialidad;
+	}
+	
+	
+	
+}

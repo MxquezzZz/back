@@ -1,0 +1,15 @@
+package com.example.demo.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.example.demo.entity.Citas;
+
+public interface CitasService  {
+
+	List<Citas> readlAll();
+	int create(Citas citas);
+	int update(Citas citas);
+	int delete (int id);
+	Optional<Citas>  findById(int id);
+}

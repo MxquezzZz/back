@@ -1,0 +1,53 @@
+package com.example.demo.entity;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "doctor")
+public class DoctorEntity {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id_doctor;
+	private String nombre;
+	private String apellidos;
+
+	public DoctorEntity() {
+	        super();
+	   }
+
+	public DoctorEntity(int id_doctor, String nombre, String apellidos) {
+	        super();
+	        this.id_doctor = id_doctor;
+	        this.nombre = nombre;
+	        this.apellidos = apellidos;
+	    }
+
+	public int getId_doctor() {
+		return id_doctor;
+	}
+
+	public void setId_doctor(int id_doctor) {
+		this.id_doctor = id_doctor;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getApellidos() {
+		return apellidos;
+	}
+
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+
+}

@@ -1,0 +1,38 @@
+package com.example.demo.serviceImpl;
+
+import com.example.demo.entity.Citas;
+import com.example.demo.service.CitasService;
+
+public class CitasServiceImpl implements CitasService{
+
+	@Override
+	public void readlAll() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int create(Citas citas) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int update(Citas citas) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int delete(int id) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Citas findById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

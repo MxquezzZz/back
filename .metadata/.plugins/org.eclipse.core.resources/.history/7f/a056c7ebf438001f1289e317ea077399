@@ -1,0 +1,28 @@
+package com.example.demo.entity;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Citas {
+	private int id;
+	private String tipo_cita;
+	private String fecha_atencion;
+	private int id_doctor;
+	private int id_especialidad;
+	
+	public Citas() {
+		super();
+	}
+
+	public Citas(int id, String tipo_cita, String fecha_atencion, int id_doctor, int id_especialidad) {
+		super();
+		this.id = id;
+		this.tipo_cita = tipo_cita;
+		this.fecha_atencion = fecha_atencion;
+		this.id_doctor = id_doctor;
+		this.id_especialidad = id_especialidad;
+	}
+	
+	
+	
+}

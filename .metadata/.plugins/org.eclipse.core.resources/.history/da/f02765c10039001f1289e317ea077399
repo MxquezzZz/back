@@ -1,0 +1,11 @@
+package com.example.demo.service;
+
+import java.util.List;
+import java.util.Optional;
+public interface DoctorService {
+	 List<Doctor> readAll();
+	    Optional<Doctor> findById(int id);
+	    Doctor create(Doctor doctor);
+	    Doctor update(int id, Doctor doctor);
+	    void delete(int id);
+}

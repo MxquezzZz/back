@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: demo-citas
+  cloud:
+    config:
+      uri:  http://localhost:8860
+

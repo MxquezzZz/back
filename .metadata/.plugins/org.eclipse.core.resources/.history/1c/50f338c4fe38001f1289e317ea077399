@@ -1,0 +1,57 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.apache.hc.core5.http.HttpStatus;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.entity.Citas;
+import com.example.demo.service.CitasService;
+
+@RestController
+@RequestMapping("/api/citas")
+public class CitasController {
+	@Autowired
+    private CitasService citasService;
+
+    // Obtener todas las citas
+    @GetMapping
+    public ResponseEntity<List<Citas>> getAllCitas() {
+        List<Citas> citas = citasService.readlAll();
+        return new ResponseEntity<>(citas, HttpStatus.SC_OK);
+    }
+
+    // Obtener una cita por ID
+    @GetMapping("/{id}")
+    public ResponseEntity<Citas> getCitasById(@PathVariable Long id) {
+        Optional<Citas> cita = citasService.getCitasById(id);
+        return cita.map(citas -> new ResponseEntity<>(citas, HttpStatus.OK))
+                   .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+    // Crear una nueva cita
+    @PostMapping
+    public ResponseEntity<Citas> createCitas(@RequestBody Citas citas) {
+        Citas nuevaCita = citasService.create(citas);
+        return new ResponseEntity<>(nuevaCita, HttpStatus.CREATED);
+    }
+
+    // Actualizar una cita existente
+    @PutMapping("/{id}")
+    public ResponseEntity<Citas> updateCitas(@PathVariable Long id, @RequestBody Citas citas) {
+        Citas citaActualizada = citasService.update(id, citas);
+        return citaActualizada != null ? new ResponseEntity<>(citaActualizada, HttpStatus.OK)
+                                       : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
+    // Eliminar una cita
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteCitas(@PathVariable Long id) {
+        citasService.delete(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+}

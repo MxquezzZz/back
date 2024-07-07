@@ -1,0 +1,9 @@
+package com.example.demo.entity;
+
+public class Citas {
+	private int id;
+	private String tipo_cita;
+	private String fecha_atencion;
+	private int id_doctor;
+	private int id_especialidad;
+}
